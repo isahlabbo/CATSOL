@@ -3,7 +3,9 @@
 @section('title')
     Projects
 @endsection
-
+@section('breadcrumb')
+        {{ Breadcrumbs::render('project') }}
+    @endsection
 @section('content')
     <div class="row">
         @foreach(App\Models\School::all() as $school)
@@ -23,6 +25,11 @@
                         <td>Supervisors</td>
                         <td><a href="{{route('project.supervisor.index',[$school->id])}}">
                             {{count($school->supervisors)}}</a></td>
+                    </tr>
+                    <tr>
+                        <td>Student</td>
+                        <td><a href="{{route('project.student.index',[$school->id])}}">
+                            {{count($school->students)}}</a></td>
                     </tr>
                 </table>
                 </div>

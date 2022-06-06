@@ -1,9 +1,7 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+    @section('breadcrumb')
+        {{ Breadcrumbs::render('dashboard') }}
+    @endsection
     @section('content')
         @if(Auth::user()->role == 'Admin')
         <h5 class="text text-center">{{date('D')}}. Batch {{App\Models\Section::find(1)->currentBatch()->name}}  Week {{App\Models\Section::find(1)->currentBatch()->currentWeek()}} Lectures</h5><br>

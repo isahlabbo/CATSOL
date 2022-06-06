@@ -30,4 +30,9 @@ class Supervisor extends BaseModel
     {
         return $this->belongsTo(School::class);
     }
+
+    public function projects()
+    {
+        return $this->hasMany(Project::class);
+    }
 }

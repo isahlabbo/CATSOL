@@ -67,7 +67,7 @@ https://www.tooplate.com/view/2115-marvel
         </div>
     </nav>
 
-    
+    @yield('breadcrumb')
     <section class="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
         <div class="container">
             @yield('content')

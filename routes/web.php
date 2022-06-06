@@ -35,6 +35,14 @@ Route::middleware(['auth:sanctum', 'verified'])
     ->group(function (){
         Route::get('/', 'ProjectController@index')->name('index');
         Route::get('school/{schoolId}', 'ProjectController@schoolProject')->name('school');
+        // Student projects
+        Route::name('student.')
+        ->prefix('school/{schoolId}/student')
+        ->group(function (){
+            Route::get('/', 'ProjectStudentController@index')->name('index');
+            Route::get('/create', 'ProjectStudentController@create')->name('create');
+            Route::post('/register', 'ProjectStudentController@register')->name('register');
+        });
         //school supervisor routes
         Route::name('supervisor.')
         ->prefix('school/{schoolId}/supervisor')
@@ -50,6 +58,7 @@ Route::middleware(['auth:sanctum', 'verified'])
             ->prefix('{supervisorId}/project')
             ->group(function (){
                 Route::get('/', 'SupervisorProjectController@index')->name('index');
+                Route::post('/register', 'SupervisorProjectController@register')->name('register');
             });
     });
 });

@@ -37,6 +37,11 @@ class School extends BaseModel
         return $this->hasMany(Supervisor::class);
     }
 
+    public function students()
+    {
+        return $this->hasMany(Student::class);
+    }
+
     
 
 
