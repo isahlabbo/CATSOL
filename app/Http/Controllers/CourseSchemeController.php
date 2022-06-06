@@ -32,7 +32,8 @@ class CourseSchemeController extends Controller
             "evaluation" => $request->evaluation,
             "significance_area" => $request->significance_area
         ]);
-        return redirect()->route('school.section.programme.course.scheme.edit',[$sectionId, $programmeId, $courseId, $schemeId]);
+        return redirect()->route('school.section.programme.course.scheme.edit',
+        [$sectionId, $programmeId, $courseId, $schemeId])->withSuccess('Scheme Updated');
     }
     public function addWeek($sectionId, $programmeId, $courseId)
     {
