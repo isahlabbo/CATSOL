@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<h4 class="text-center">{{$scheme->course->title}} week {{$scheme->week}} edit</h4><br>
+<h4 class="text-center">{{$scheme->course->title}} week {{$scheme->week}} Scheme of Work Edit</h4><br>
 <form action="{{route('school.section.programme.course.scheme.update',[
     $scheme->course->programme->section->id,
     $scheme->course->programme->id,
